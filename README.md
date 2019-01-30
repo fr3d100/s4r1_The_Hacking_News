@@ -33,11 +33,13 @@ tp Link.all
 
 Avoir tous les commentaires de niveau 1 (liés à un "link")
 ```
+#Les commentaires de niveau 1 ne sont pas liés à des commentaires
 tp Comment.where(comment: nil)
 ```
 
 Avoir tous les commentaires de niveau 2 (liés à un commentaire)
 ```
+#Les commentaires de niveau 2 sont liés à des commentaires et non à des liens
 tp Comment.where(link :nil)
 ```
 
@@ -48,4 +50,5 @@ tp Comment.where(link: Link.first)
 
 Avoir tous les commentaires de niveau 2 du premier lien :
 ```
-tp Comment.where(comment: Comment.where(link: Link.first))```
+tp Comment.where(comment: Comment.where(link: Link.first))
+```
