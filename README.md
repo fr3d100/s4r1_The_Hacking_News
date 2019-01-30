@@ -1,24 +1,51 @@
-# README
+# Bienvenue
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ceci est mon super The Hacking News
 
-Things you may want to cover:
+## Pour le tester :
 
-* Ruby version
+* Clone le projet git
+```
+git clone https://github.com/fr3d100/s4r1_The_Hacking_News.git
+```
 
-* System dependencies
+* Rend toi à la racine de l'application
+```
+cd s4r1_The_Hacking_News
+```
 
-* Configuration
+* Lance la console Rails 
+```
+rails c
+```
 
-* Database creation
+## Quelques petites commandes relatives aux programme:
 
-* Database initialization
+Avoir tous les Utilisateurs:
+```
+tp User.all
+```
 
-* How to run the test suite
+Avoir tous les liens :
+```
+tp Link.all
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Avoir tous les commentaires de niveau 1 (liés à un "link")
+```
+tp Comment.where(comment: nil)
+```
 
-* Deployment instructions
+Avoir tous les commentaires de niveau 2 (liés à un commentaire)
+```
+tp Comment.where(link :nil)
+```
 
-* ...
+Avoir tous les commentaires de niveau 1 du premier lien :
+```
+tp Comment.where(link: Link.first)
+```
+
+Avoir tous les commentaires de niveau 2 du premier lien :
+```
+tp Comment.where(comment: Comment.where(link: Link.first))```
